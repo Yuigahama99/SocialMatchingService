@@ -1,11 +1,11 @@
-## **Full name:** Bin Fang
-## **Student ID:** 4398708557
-***
-## **What I have done:**
-* ***Phase 1A:*** establish the connections between the Clients and Server C.
-* ***Phase 1B:*** establish the connections between Server C and all other backend servers.
-* ***Phase 2:*** dispatch and process in designated backend servers (serverT: topology; serverS: scores; serverP: process).
-* ***Phase 3:*** return the shortest path from serverP to server C. Then send to the clients. Clients will display the result on screen.
+## Socket Programming Project: Social Matching Service
+Social networks are nowadays in every moment of our lives. The information built upon interactions among people has led to different types of applications. Crowdsourced apps such as Uber, Lyft, Waze use information for navigation purposes. Other apps such as dating apps provide matching algorithms to connect users who share similar behaviours and increase their compatibility chances for future success. In this project we shall implement a simplified version of a matching app that'll help us understand how matching systems work in the real world. Specifically, you'll be given a network topology consisting of social connections between different users in the network. This will consist of nodes representing users and the edges between them. Beside social network topology, you will also be given a database consisting of compatibility test scores. This database will be in plain text and consist of multiple key (the user), value (the
+corresponding score) pairs.
+
+In this project, you will implement a model of a social matching service where two clients issue a request for finding their compatibility. This request will be sent to a Central Server which in turn interacts with three other backend servers for pulling information and data processing. The Central server will connect to the Topology server (server T) which has the user social network information. Central server has to connect as well to the Score server (server S) which stores the compatibility scores for each user. Finally, the server will use the network topology and scores to generate a graph that connects both users, and provide the smallest matching gap between them. The procedure to complete this task is provided in phase 2’s description. Both the matching gap and the graph generated will be sent back to both clients.
+![image](https://user-images.githubusercontent.com/76589915/143735982-7c1c7770-1d8d-4a5c-94c5-167b27266595.png)
+Server T has access to a database file named edgelist.txt, and Server S has access to a database file named scores.txt. Both clients and the Central server communicate over a TCP connection while the communication between Central and the Back-Servers T, S & P is over a UDP connection. This setup is illustrated
+in Figure 1.
 ***
 ## **Files function:**
 * ***clientA.cpp:*** login using command **./clientA \<username>**, receive and display compatibility result with clientB from server.
